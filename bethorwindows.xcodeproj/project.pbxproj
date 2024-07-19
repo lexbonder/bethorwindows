@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */; };
 		5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453ED2C417B17008E4BAE /* AppDelegate.swift */; };
 		5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453EF2C417B17008E4BAE /* ContentView.swift */; };
 		5C9453F22C417B18008E4BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9453F12C417B18008E4BAE /* Assets.xcassets */; };
 		5C9453F52C417B18008E4BAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9453F42C417B18008E4BAE /* Preview Assets.xcassets */; };
+		5C9453FC2C41B220008E4BAE /* WindowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453FB2C41B220008E4BAE /* WindowDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		5C9453EA2C417B17008E4BAE /* bethorwindows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bethorwindows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9453ED2C417B17008E4BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9453EF2C417B17008E4BAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C9453F12C417B18008E4BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9453F42C417B18008E4BAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C9453FB2C41B220008E4BAE /* WindowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				5C9453ED2C417B17008E4BAE /* AppDelegate.swift */,
 				5C9453EF2C417B17008E4BAE /* ContentView.swift */,
+				5C9453FB2C41B220008E4BAE /* WindowDetailView.swift */,
+				5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */,
 				5C9453F12C417B18008E4BAE /* Assets.xcassets */,
 				5C9453F32C417B18008E4BAE /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9453FC2C41B220008E4BAE /* WindowDetailView.swift in Sources */,
 				5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */,
+				5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */,
 				5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,13 +283,13 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,13 +314,13 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
