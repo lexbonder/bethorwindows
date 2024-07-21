@@ -5,7 +5,13 @@
   },
   "resources" : [
     {
-      "filename" : "iAmWhatIAmAR.arreferenceimage"
+      "filename" : "creation.arreferenceimage"
+    },
+    {
+      "filename" : "iAmWhatIAm.arreferenceimage"
+    },
+    {
+      "filename" : "redemption.arreferenceimage"
     }
   ]
 }

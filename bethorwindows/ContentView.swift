@@ -9,48 +9,56 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    let windows = Bundle.main.decode("windows.json")
+    
     @State private var showingMenu = false
-    @State private var showingInstructions = true
+    @State private var showingInstructions = false
+    @State private var showingListView = false
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                ARViewContainer().edgesIgnoringSafeArea(.all)
-                VStack {
-                    HStack {
-                        Button {
-                            showingInstructions = true
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .font(.title)
-                                .background(.ultraThinMaterial)
-                                .clipShape(.circle)
-                        }
-                        Spacer()
-                        NavigationLink(destination: WindowDetailView()) {
-                            Text("List View")
-                        }
-                        .padding(10)
-                        .background(.thinMaterial)
-                        .clipShape(.capsule)
+            Group {
+                if showingListView {
+                    ListView()
+                } else {
+                    ARViewContainer().edgesIgnoringSafeArea(.all)
+                }
+            }
+            .confirmationDialog("menu", isPresented: $showingMenu, titleVisibility: .hidden) {
+                Button("introduction") {}
+                Button("backgrounds") {}
+                Button("about the artist") {}
+            }
+            .alert(isPresented: $showingInstructions) {
+                Alert(
+                    title: Text(Constants.welcomeTitle),
+                    message: Text(Constants.welcomeBody),
+                    dismissButton: .default(Text("Lets go!"))
+                )
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingInstructions = true
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .font(.title2)
+                            .clipShape(.circle)
                     }
-                    .padding(.horizontal)
-                    Spacer()
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingListView.toggle()
+                    } label: {
+                        Text(showingListView ? "Use Camera" : "List View")
+                            .padding(5)
+                            .clipShape(.capsule)
+                    }
+                }
+                ToolbarItem(placement: .bottomBar) {
                     Button("menu") {
                         showingMenu.toggle()
                     }
-                }
-                .padding()
-                .confirmationDialog("menu", isPresented: $showingMenu, titleVisibility: .hidden) {
-                    Button("introduction") {}
-                    Button("about the artist") {}
-                }
-                .alert(isPresented: $showingInstructions) {
-                    Alert(
-                        title: Text("Hello and Welcome!"),
-                        message: Text("Aim your camera at any of the stained glass windows within the Gitlin Sanctuary to see their titles. Tap the title to learn more about them."),
-                        dismissButton: .default(Text("Lets go!"))
-                    )
                 }
             }
         }
