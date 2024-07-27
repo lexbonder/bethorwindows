@@ -41,9 +41,11 @@ struct ContentView : View {
                     Button {
                         showingInstructions = true
                     } label: {
-                        Image(systemName: "info.circle")
-                            .font(.title2)
+                        Image(systemName: "info")
+                            .padding(8)
+                            .background(.regularMaterial)
                             .clipShape(.circle)
+                            .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -51,13 +53,21 @@ struct ContentView : View {
                         showingListView.toggle()
                     } label: {
                         Text(showingListView ? "Use Camera" : "List View")
-                            .padding(5)
+                            .padding(8)
+                            .background(.regularMaterial)
                             .clipShape(.capsule)
+                            .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .bottomBar) {
-                    Button("menu") {
+                    Button {
                         showingMenu.toggle()
+                    } label: {
+                        Text("Menu")
+                            .padding(8)
+                            .background(.regularMaterial)
+                            .clipShape(.capsule)
+                            .foregroundStyle(.white)
                     }
                 }
             }
