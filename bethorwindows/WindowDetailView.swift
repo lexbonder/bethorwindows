@@ -21,7 +21,17 @@ struct WindowDetailView: View {
             Text(window.location)
                 .font(.subheadline)
             ScrollView {
-                Text(window.description)
+                VStack(alignment: .leading) {
+                    Text("About:")
+                        .fontWeight(.bold)
+                    Text(window.description)
+                    if let dedication = window.dedication {
+                        Text("Dedication:")
+                            .padding(.top)
+                            .fontWeight(.bold)
+                        Text(dedication)
+                    }
+                }
             }
             .padding()
             Spacer()
@@ -30,5 +40,5 @@ struct WindowDetailView: View {
 }
 
 #Preview {
-    WindowDetailView(window: Window.example)
+    WindowDetailView(window: Window.allWindows[8])
 }

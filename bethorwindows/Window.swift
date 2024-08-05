@@ -13,6 +13,7 @@ struct Window: Codable, Identifiable {
     let group: String
     let image: String
     let description: String
+    let dedication: String?
     
     var id: String {
         return self.image
@@ -23,6 +24,6 @@ struct Window: Codable, Identifiable {
     static let aboveArkWindows = allWindows.filter { $0.group == "aboveArk" }
     static let sanctuaryWindows = allWindows.filter { $0.group == "sancutary" }
     static let passoverWindows = allWindows.filter { $0.group == "passover" }
-    static let example = allWindows[2]
+    static let example = allWindows[5]
 }
 
