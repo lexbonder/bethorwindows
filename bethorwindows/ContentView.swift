@@ -42,10 +42,6 @@ struct ContentView : View {
                         showingInstructions = true
                     } label: {
                         Image(systemName: "info")
-                            .padding(8)
-                            .background(.regularMaterial)
-                            .clipShape(.circle)
-                            .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -53,10 +49,6 @@ struct ContentView : View {
                         showingListView.toggle()
                     } label: {
                         Text(showingListView ? "Use Camera" : "List View")
-                            .padding(8)
-                            .background(.regularMaterial)
-                            .clipShape(.capsule)
-                            .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .bottomBar) {
@@ -64,10 +56,6 @@ struct ContentView : View {
                         showingMenu.toggle()
                     } label: {
                         Text("Menu")
-                            .padding(8)
-                            .background(.regularMaterial)
-                            .clipShape(.capsule)
-                            .foregroundStyle(.white)
                     }
                 }
             }

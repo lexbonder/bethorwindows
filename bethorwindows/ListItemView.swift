@@ -26,5 +26,5 @@ struct ListItemView: View {
 }
 
 #Preview {
-    ListItemView(window: Window.example)
+    ListItemView(window: Window.allWindows[3])
 }
