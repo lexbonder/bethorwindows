@@ -2,7 +2,7 @@
 
 ## Synopsis 
 
-This is Augmented Reality iOS app built so users can point their cameras at stained glass windows to see the title and tap the windows to be brought to their descriptions.
+This is an Augmented Reality iOS app built so users can point their cameras at stained glass windows to see the title and tap the windows to be brought to their descriptions.
 
 ## Screenshots
 
