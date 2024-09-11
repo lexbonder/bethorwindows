@@ -58,18 +58,30 @@ class Coordinator: NSObject, ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
-            print("Detected an image anchor!")
-            print("Anchor Name: \(imageAnchor.name!)")
             
-            // Create a cube model
-            let mesh = MeshResource.generateBox(size: 0.4, cornerRadius: 0.005)
-            let material = SimpleMaterial(color: .gray, roughness: 0.15, isMetallic: true)
-            let model = ModelEntity(mesh: mesh, materials: [material])
-            model.transform.translation.y = 0.05
+            let title = (Window.allWindows.first { $0.image == anchor.name}?.title)!
+            print("Detected an image anchor: \(title)")
             
+            // Create Text Model
+            let textMesh = MeshResource.generateText(title, extrusionDepth: 0.01, font: .boldSystemFont(ofSize: 0.1), containerFrame: .zero, alignment: .center, lineBreakMode: .byWordWrapping)
+            let textMaterial = SimpleMaterial(color: .lightGray, isMetallic: true)
+            let textModel = ModelEntity(mesh: textMesh, materials: [textMaterial])
+            
+            // Reposition
+            let xHalf = textMesh.bounds.extents.x / 2
+            let meshHeight = textMesh.bounds.extents.y
+            let halfAnchorHeight = Float(imageAnchor.referenceImage.physicalSize.height) / 2
+            textModel.position.x -= xHalf
+            textModel.position.z -= halfAnchorHeight
+            
+            // Face Forwards
+            textModel.orientation = simd_quatf(angle: -90, axis: SIMD3(x: 1, y: 0, z: 0))
+            
+            // Build Anchor Entity
             let anchorEntity = AnchorEntity(anchor: imageAnchor)
-            anchorEntity.addChild(model)
-            
+            anchorEntity.addChild(textModel)
+
+            // Add to Scene
             arView?.scene.addAnchor(anchorEntity)
         }
         
