@@ -4,14 +4,6 @@
     "version" : 1
   },
   "resources" : [
-    {
-      "filename" : "creation.arreferenceimage"
-    },
-    {
-      "filename" : "iAmWhatIAm.arreferenceimage"
-    },
-    {
-      "filename" : "redemption.arreferenceimage"
-    }
+
   ]
 }

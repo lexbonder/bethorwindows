@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RealityKit
 
 struct ContentView : View {
     let windows = Bundle.main.decode("windows.json")
@@ -24,6 +23,8 @@ struct ContentView : View {
                     ARViewContainer().edgesIgnoringSafeArea(.all)
                 }
             }
+//            .toolbar((showingListView ? .visible : .hidden), for: .navigationBar, .bottomBar)
+//            .toolbarBackground((showingListView ? .visible : .hidden), for: )
             .confirmationDialog("menu", isPresented: $showingMenu, titleVisibility: .hidden) {
                 Button("introduction") {}
                 Button("backgrounds") {}
@@ -46,7 +47,9 @@ struct ContentView : View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        showingListView.toggle()
+                        print("before: ", showingListView)
+                        showingListView = !showingListView
+                        print("after: ", showingListView)
                     } label: {
                         Text(showingListView ? "Use Camera" : "List View")
                     }
@@ -61,38 +64,6 @@ struct ContentView : View {
             }
         }
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-
-        // Create a cube model
-        let mesh = MeshResource.generateBox(size: 0.1, cornerRadius: 0.005)
-        let material = SimpleMaterial(color: .gray, roughness: 0.15, isMetallic: true)
-        let model = ModelEntity(mesh: mesh, materials: [material])
-        model.transform.translation.y = 0.05
-        
-        
-
-        // Create horizontal plane anchor for the content
-        let imageAnchor = AnchorEntity(.image(group: "AR Resources", name: "iAmWhatIAmAR"))
-//        let anchor = AnchorEntity()
-    
-//        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.2, 0.2)))
-        imageAnchor.children.append(model)
-
-        // Add the horizontal plane anchor to the scene
-        arView.scene.anchors.append(imageAnchor)
-
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 #Preview {
