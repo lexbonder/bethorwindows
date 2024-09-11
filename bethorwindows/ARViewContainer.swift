@@ -54,7 +54,6 @@ struct ARViewContainer: UIViewRepresentable {
 
 class Coordinator: NSObject, ARSessionDelegate {
     weak var arView: ARView?
-//
     
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
