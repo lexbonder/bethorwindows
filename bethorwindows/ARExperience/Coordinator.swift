@@ -7,6 +7,7 @@
 
 import ARKit
 import RealityKit
+import SwiftUI
 
 class Coordinator: NSObject, ARSessionDelegate {
     let windows: [Window]

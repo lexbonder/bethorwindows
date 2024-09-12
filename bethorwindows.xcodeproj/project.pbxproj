@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C0D6A812C939A7D00B0785D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D6A802C939A7D00B0785D /* Router.swift */; };
 		5C0D6A842C939D3E00B0785D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D6A832C939D3E00B0785D /* Coordinator.swift */; };
+		5C0D6A872C93AAA100B0785D /* AboutTheArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D6A862C93AAA100B0785D /* AboutTheArtistView.swift */; };
 		5C1029BA2C8F6C4E00E653AD /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1029B92C8F6C4E00E653AD /* ARViewContainer.swift */; };
 		5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */; };
 		5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453ED2C417B17008E4BAE /* AppDelegate.swift */; };
@@ -22,11 +23,13 @@
 		5CD2FC8B2C4B1325003A168B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8A2C4B1325003A168B /* Window.swift */; };
 		5CD2FC8D2C4B1802003A168B /* windows.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8C2C4B1802003A168B /* windows.json */; };
 		5CD2FC8F2C4C9C0E003A168B /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */; };
+		5CF8F0092C93AFA800608F7F /* BackgroundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8F0082C93AFA800608F7F /* BackgroundDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C0D6A802C939A7D00B0785D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5C0D6A832C939D3E00B0785D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5C0D6A862C93AAA100B0785D /* AboutTheArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheArtistView.swift; sourceTree = "<group>"; };
 		5C1029B92C8F6C4E00E653AD /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		5C9453EA2C417B17008E4BAE /* bethorwindows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bethorwindows.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +44,7 @@
 		5CD2FC8A2C4B1325003A168B /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		5CD2FC8C2C4B1802003A168B /* windows.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = windows.json; sourceTree = "<group>"; };
 		5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		5CF8F0082C93AFA800608F7F /* BackgroundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			children = (
 				5C9453FB2C41B220008E4BAE /* WindowDetailView.swift */,
 				5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */,
+				5C0D6A862C93AAA100B0785D /* AboutTheArtistView.swift */,
+				5CF8F0082C93AFA800608F7F /* BackgroundDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0D6A812C939A7D00B0785D /* Router.swift in Sources */,
+				5C0D6A872C93AAA100B0785D /* AboutTheArtistView.swift in Sources */,
 				5C9453FC2C41B220008E4BAE /* WindowDetailView.swift in Sources */,
+				5CF8F0092C93AFA800608F7F /* BackgroundDetailView.swift in Sources */,
 				5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */,
 				5C0D6A842C939D3E00B0785D /* Coordinator.swift in Sources */,
 				5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */,

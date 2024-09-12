@@ -27,5 +27,7 @@ Born in Belgium, Gilsoul served his apprenticeship in the art of stained glass p
 """
     
     static let welcomeTitle = "Hello and Welcome!"
-    static let welcomeBody = "Aim your camera at any of the stained glass windows within the Gitlin Sanctuary to see their titles. Tap the title to learn more about them."
+    static let welcomeBody = "Aim your camera at any of the stained glass windows within the Gitlin Sanctuary to see their titles. Tap the window or title to learn more about them."
+    
+    static let windowBackgroundInfo = "You will see that every window with the exception of the HOLOCAUST window has the same shade of blue in the background. This is important as the artist wished to emphasize their permanence of the generations of Israel. The representative color which is blue, continues throughout all generations and therefore is shown in all of the windows."
 }
