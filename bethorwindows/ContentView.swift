@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView : View {
+    @StateObject var router = Router.shared
     let windows = Bundle.main.decode("windows.json")
     
     @State private var showingMenu = false
@@ -15,16 +16,18 @@ struct ContentView : View {
     @State private var showingListView = false
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $router.path) {
             Group {
                 if showingListView {
                     ListView()
                 } else {
-                    ARViewContainer().edgesIgnoringSafeArea(.all)
+                    ARViewContainer(windows: windows)
+                        .edgesIgnoringSafeArea(.all)
                 }
             }
-//            .toolbar((showingListView ? .visible : .hidden), for: .navigationBar, .bottomBar)
-//            .toolbarBackground((showingListView ? .visible : .hidden), for: )
+            .navigationDestination(for: Window.self) { window in
+                WindowDetailView(window: window)
+            }
             .confirmationDialog("menu", isPresented: $showingMenu, titleVisibility: .hidden) {
                 Button("introduction") {}
                 Button("backgrounds") {}

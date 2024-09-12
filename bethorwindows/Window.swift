@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Window: Codable, Identifiable {
+struct Window: Codable, Identifiable, Hashable {
     let title: String
     let location: String
     let group: String
