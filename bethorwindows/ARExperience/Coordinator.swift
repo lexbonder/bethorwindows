@@ -7,7 +7,6 @@
 
 import ARKit
 import RealityKit
-import SwiftUI
 
 class Coordinator: NSObject, ARSessionDelegate {
     let windows: [Window]
@@ -26,12 +25,23 @@ class Coordinator: NSObject, ARSessionDelegate {
             print("Detected an image anchor: \(title)")
             
                 // Create text model
-            let textMesh = MeshResource.generateText(title, extrusionDepth: 0.01, font: .boldSystemFont(ofSize: 0.1), containerFrame: .zero, alignment: .center, lineBreakMode: .byWordWrapping)
+            let textMesh = MeshResource.generateText(
+                title,
+                extrusionDepth: 0.01,
+                font: .boldSystemFont(ofSize: 0.1),
+                containerFrame: .zero,
+                alignment: .center,
+                lineBreakMode: .byWordWrapping
+            )
             let textMaterial = SimpleMaterial(color: .lightGray, isMetallic: true)
             let textModel = ModelEntity(mesh: textMesh, materials: [textMaterial])
             
                 // Create overlay
-            let imageOverlay = ModelEntity(mesh: MeshResource.generatePlane(width: Float(imageAnchor.referenceImage.physicalSize.width), height: Float(imageAnchor.referenceImage.physicalSize.height)), materials: [UnlitMaterial(color: .clear)])
+            let imageOverlay = ModelEntity(
+                mesh: MeshResource.generatePlane(
+                    width: Float(imageAnchor.referenceImage.physicalSize.width),
+                    height: Float(imageAnchor.referenceImage.physicalSize.height)),
+                materials: [SimpleMaterial(color: .clear, isMetallic: true)])
             
                 // Lay it flat on top of image
             imageOverlay.orientation = simd_quatf(angle: 90 * Float.pi / 180, axis: SIMD3(x: -1, y: 0, z: 0))

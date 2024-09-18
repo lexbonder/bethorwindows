@@ -9,7 +9,18 @@ import SwiftUI
 
 struct IntroductionView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Introduction")
+                .font(.title)
+                .padding(.bottom)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text(Constants.introduction)
+                }
+            }
+            .padding(.horizontal)
+            Spacer()
+        }
     }
 }
 

@@ -21,23 +21,23 @@ struct ContentView : View {
                 .navigationDestination(for: Window.self) { window in
                     WindowDetailView(window: window)
                 }
-                .confirmationDialog("menu", isPresented: $showingMenu, titleVisibility: .hidden) {
+                .confirmationDialog("Menu", isPresented: $showingMenu, titleVisibility: .hidden) {
                     NavigationLink(destination: IntroductionView()) {
-                        Text("introduction")
+                        Text("Introduction")
                     }
                     NavigationLink(destination: ListView()) {
-                        Text("list view")
+                        Text("List view")
                     }
                     NavigationLink(destination: AboutTheArtistView()) {
-                        Text("about the artist")
+                        Text("About the artist")
                     }
                     NavigationLink(destination: BackgroundDetailView()) {
-                        Text("backgrounds")
+                        Text("Backgrounds")
                     }
                     Button {
                         showingInstructions = true
                     } label: {
-                        Text("help")
+                        Text("Help")
                     }
                 }
                 .alert(isPresented: $showingInstructions) {
@@ -52,7 +52,7 @@ struct ContentView : View {
                         Button {
                             showingMenu.toggle()
                         } label: {
-                            Text("menu")
+                            Text("Menu")
                         }
                     }
                 }

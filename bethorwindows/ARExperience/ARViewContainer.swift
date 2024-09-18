@@ -27,7 +27,7 @@ struct ARViewContainer: UIViewRepresentable {
             guard let cgImage = uiImage.cgImage else {
                 fatalError("Unable to convert UI Image to CGImage")
             }
-            let refImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: 0.61)
+            let refImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: 1.07)
             refImage.name = $0.image
             return refImage
         })

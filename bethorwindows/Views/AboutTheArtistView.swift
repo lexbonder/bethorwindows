@@ -13,8 +13,18 @@ struct AboutTheArtistView: View {
             Text(Constants.artistName)
                 .font(.title)
                 .padding(.bottom)
-            Text(Constants.aboutTheArtist)
-                .padding(.horizontal)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text(Constants.aboutTheArtist)
+                        .padding(.bottom)
+                    Text(Constants.artistQuote)
+                        .italic()
+                        .padding(.leading, 20)
+                        .padding(.bottom)
+                    Text(Constants.artistObit)
+                }
+            }
+            .padding(.horizontal)
             Spacer()
         }
     }
