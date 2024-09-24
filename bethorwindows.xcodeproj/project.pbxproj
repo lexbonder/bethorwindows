@@ -352,7 +352,7 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Congregation Beth Or";
+				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,7 +390,7 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Congregation Beth Or";
+				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
