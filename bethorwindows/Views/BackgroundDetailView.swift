@@ -26,7 +26,7 @@ struct BackgroundDetailView: View {
                     .frame(width: 100)
             }
             Text("Window backgrounds")
-                .font(.title)
+                .titleGotham()
             Text(Constants.windowBackgroundInfo)
                 .padding(.horizontal)
             Spacer()

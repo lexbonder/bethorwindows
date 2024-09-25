@@ -12,6 +12,10 @@
 		5C0D6A872C93AAA100B0785D /* AboutTheArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D6A862C93AAA100B0785D /* AboutTheArtistView.swift */; };
 		5C1029BA2C8F6C4E00E653AD /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1029B92C8F6C4E00E653AD /* ARViewContainer.swift */; };
 		5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */; };
+		5C202D482CA46CC10032AEF9 /* gotham-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C202D472CA46CC10032AEF9 /* gotham-bold.otf */; };
+		5C202D512CA4AB500032AEF9 /* Font-Gotham.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C202D502CA4AB500032AEF9 /* Font-Gotham.swift */; };
+		5C202D532CA4B2700032AEF9 /* gotham-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C202D522CA4B2700032AEF9 /* gotham-light.otf */; };
+		5C202D562CA4B3A10032AEF9 /* gotham-light-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C202D542CA4B3A10032AEF9 /* gotham-light-italic.otf */; };
 		5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453ED2C417B17008E4BAE /* AppDelegate.swift */; };
 		5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9453EF2C417B17008E4BAE /* ContentView.swift */; };
 		5C9453F22C417B18008E4BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9453F12C417B18008E4BAE /* Assets.xcassets */; };
@@ -32,6 +36,11 @@
 		5C0D6A862C93AAA100B0785D /* AboutTheArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheArtistView.swift; sourceTree = "<group>"; };
 		5C1029B92C8F6C4E00E653AD /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		5C1D2B2B2C49C7D300D18765 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		5C202D472CA46CC10032AEF9 /* gotham-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gotham-bold.otf"; sourceTree = "<group>"; };
+		5C202D4D2CA46E9C0032AEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C202D502CA4AB500032AEF9 /* Font-Gotham.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font-Gotham.swift"; sourceTree = "<group>"; };
+		5C202D522CA4B2700032AEF9 /* gotham-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gotham-light.otf"; sourceTree = "<group>"; };
+		5C202D542CA4B3A10032AEF9 /* gotham-light-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gotham-light-italic.otf"; sourceTree = "<group>"; };
 		5C9453EA2C417B17008E4BAE /* bethorwindows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bethorwindows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9453ED2C417B17008E4BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9453EF2C417B17008E4BAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +96,25 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		5C202D462CA46C850032AEF9 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5C202D472CA46CC10032AEF9 /* gotham-bold.otf */,
+				5C202D522CA4B2700032AEF9 /* gotham-light.otf */,
+				5C202D542CA4B3A10032AEF9 /* gotham-light-italic.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5C202D4E2CA4AAE30032AEF9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */,
+				5C202D502CA4AB500032AEF9 /* Font-Gotham.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5C9453E12C417B17008E4BAE = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +134,8 @@
 		5C9453EC2C417B17008E4BAE /* bethorwindows */ = {
 			isa = PBXGroup;
 			children = (
+				5C202D4D2CA46E9C0032AEF9 /* Info.plist */,
+				5C202D462CA46C850032AEF9 /* fonts */,
 				5C0D6A822C939D2000B0785D /* ARExperience */,
 				5C1029BB2C8F6CDB00E653AD /* List */,
 				5C0D6A852C939DEA00B0785D /* Views */,
@@ -114,7 +144,7 @@
 				5CD2FC8A2C4B1325003A168B /* Window.swift */,
 				5C98E7FA2C4CA301009BCDD7 /* Constants.swift */,
 				5C0D6A802C939A7D00B0785D /* Router.swift */,
-				5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */,
+				5C202D4E2CA4AAE30032AEF9 /* Extensions */,
 				5CD2FC8C2C4B1802003A168B /* windows.json */,
 				5C9453F12C417B18008E4BAE /* Assets.xcassets */,
 				5C9453F32C417B18008E4BAE /* Preview Content */,
@@ -189,8 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9453F52C417B18008E4BAE /* Preview Assets.xcassets in Resources */,
+				5C202D532CA4B2700032AEF9 /* gotham-light.otf in Resources */,
+				5C202D482CA46CC10032AEF9 /* gotham-bold.otf in Resources */,
 				5C9453F22C417B18008E4BAE /* Assets.xcassets in Resources */,
 				5CD2FC8D2C4B1802003A168B /* windows.json in Resources */,
+				5C202D562CA4B3A10032AEF9 /* gotham-light-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +236,7 @@
 			files = (
 				5C0D6A812C939A7D00B0785D /* Router.swift in Sources */,
 				5C0D6A872C93AAA100B0785D /* AboutTheArtistView.swift in Sources */,
+				5C202D512CA4AB500032AEF9 /* Font-Gotham.swift in Sources */,
 				5C9453FC2C41B220008E4BAE /* WindowDetailView.swift in Sources */,
 				5CF8F0092C93AFA800608F7F /* BackgroundDetailView.swift in Sources */,
 				5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */,
@@ -352,6 +386,7 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bethorwindows/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
@@ -390,6 +425,7 @@
 				DEVELOPMENT_TEAM = DVQB5A7DM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bethorwindows/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";

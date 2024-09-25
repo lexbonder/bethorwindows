@@ -11,7 +11,7 @@ struct AboutTheArtistView: View {
     var body: some View {
         VStack {
             Text(Constants.artistName)
-                .font(.title)
+                .titleGotham()
                 .padding(.bottom)
             ScrollView {
                 VStack(alignment: .leading) {

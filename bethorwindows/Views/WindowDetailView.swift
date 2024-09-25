@@ -17,9 +17,9 @@ struct WindowDetailView: View {
                 .scaledToFit()
                 .frame(width: 150, height: 200)
             Text(window.title)
-                .font(.title)
+                .titleGotham()
             Text(window.location)
-                .font(.subheadline)
+                .subtitleGotham()
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("About:")

@@ -28,7 +28,7 @@ Born in Belgium, Gilsoul served his apprenticeship in the art of stained glass p
 Mr. Gilsoul asked that the following statement be published, specifying his thanks:
 """
     static let artistQuote = """
-I would like to thank the architect, Wolfgang Rapp, who created Beth Or's new Sanctuary. I also thank the Rabbi, and the members of the building committee, particularly Dr. Jay Rosan and Dr. Bruce Sklar for the confidence they showed in allowing me to realize the stained glass windows for the temple.
+"I would like to thank the architect, Wolfgang Rapp, who created Beth Or's new Sanctuary. I also thank the Rabbi, and the members of the building committee, particularly Dr. Jay Rosan and Dr. Bruce Sklar for the confidence they showed in allowing me to realize the stained glass windows for the temple.
 
 I thank particularly Bill for his knowledge, advice, and asistance - his patience was precious to me.
 
@@ -36,10 +36,10 @@ I am grateful to all the people I met during the realization of this project, an
 
 It is my hype that these windows, and that this ark, show the unique spiritual vocation of Israel among the civilizations of the world, and its ever renewed youth and vitality.
 
-Again, Thank you all.
+Again, Thank you all."
 """
     
-    static let artistObit = "Mr. Gilsoul died in 2000."
+    static let artistObit = "- Benoit Gilsoul (1914-2000)"
 
     
     static let welcomeTitle = "Hello and Welcome!"

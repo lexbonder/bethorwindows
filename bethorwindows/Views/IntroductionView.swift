@@ -11,7 +11,7 @@ struct IntroductionView: View {
     var body: some View {
         VStack {
             Text("Introduction")
-                .font(.title)
+                .titleGotham()
                 .padding(.bottom)
             ScrollView {
                 VStack(alignment: .leading) {

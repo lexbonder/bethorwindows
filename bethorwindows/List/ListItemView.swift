@@ -18,7 +18,7 @@ struct ListItemView: View {
                 .scaledToFit()
             VStack(alignment: .leading) {
                 Text(window.title)
-                    .font(.title)
+                    .titleGotham()
             }
                 
         }
