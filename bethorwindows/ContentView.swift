@@ -53,6 +53,10 @@ struct ContentView : View {
                             showingMenu.toggle()
                         } label: {
                             Text("Menu")
+                                .foregroundStyle(.white)
+                                .padding(10)
+                                .background(.ultraThinMaterial)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
                         }
                     }
                 }

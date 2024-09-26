@@ -20,22 +20,33 @@ class Coordinator: NSObject, ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
-            
-            guard let title = (windows.first { $0.image == anchor.name})?.title else { return }
+            guard let window = (windows.first { $0.image == anchor.name}) else { return }
+            let title = window.title
             print("Detected an image anchor: \(title)")
             
                 // Create text model
             let textMesh = MeshResource.generateText(
                 title,
                 extrusionDepth: 0.01,
-                font: .boldSystemFont(ofSize: 0.1),
+                font: UIFont(name: FontGothamType.bold.rawValue, size: 0.1) ?? .boldSystemFont(ofSize: 0.1),
                 containerFrame: .zero,
                 alignment: .center,
                 lineBreakMode: .byWordWrapping
             )
-            let textMaterial = SimpleMaterial(color: .lightGray, isMetallic: true)
+            let textMaterial = UnlitMaterial(color: .white)
             let textModel = ModelEntity(mesh: textMesh, materials: [textMaterial])
             
+                // Create text background
+            let textBackgroundMesh = MeshResource.generatePlane(
+                width: textMesh.bounds.extents.x + 0.035,
+                height: textMesh.bounds.extents.y + 0.035,
+                cornerRadius: 0.02
+            )
+            
+            let textBackgroundMaterial = UnlitMaterial(color: .black)
+            let textBackgroundModel = ModelEntity(mesh: textBackgroundMesh, materials: [textBackgroundMaterial])
+            textBackgroundModel.orientation = simd_quatf(angle: 90 * Float.pi / 180, axis: SIMD3(x: -1, y: 0, z: 0))
+
                 // Create overlay
             let imageOverlay = ModelEntity(
                 mesh: MeshResource.generatePlane(
@@ -49,15 +60,24 @@ class Coordinator: NSObject, ARSessionDelegate {
                 // Reposition title
             let xHalf = textMesh.bounds.extents.x / 2
             let halfAnchorHeight = Float(imageAnchor.referenceImage.physicalSize.height) / 2
+            let halfTextHeight = textMesh.bounds.extents.y / 2
             textModel.position.x -= xHalf
-            textModel.position.z -= halfAnchorHeight
+
+            if (window.group == "ark") {
+                textBackgroundModel.position.z -= halfTextHeight + 0.0125
+            } else {
+                textModel.position.z -= halfAnchorHeight - textBackgroundMesh.bounds.extents.y
+                textBackgroundModel.position.z -= halfAnchorHeight - (halfTextHeight + 0.0125)
+            }
+
             
                 // Face title forwards and a little down
-            textModel.orientation = simd_quatf(angle: 80 * Float.pi / 180, axis: SIMD3(x: -1, y: 0, z: 0))
+            textModel.orientation = simd_quatf(angle: 90 * Float.pi / 180, axis: SIMD3(x: -1, y: 0, z: 0))
             
                 // Build anchor entity
             let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
             imageAnchorEntity.name = anchor.name!
+            imageAnchorEntity.addChild(textBackgroundModel)
             imageAnchorEntity.addChild(textModel)
             imageAnchorEntity.addChild(imageOverlay)
             
