@@ -387,7 +387,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bethorwindows/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stained Glass AR";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -426,7 +426,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bethorwindows/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Beth Or";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stained Glass AR";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify the windows around you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
