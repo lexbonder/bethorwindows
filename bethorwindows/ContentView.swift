@@ -21,6 +21,9 @@ struct ContentView : View {
                 .navigationDestination(for: Window.self) { window in
                     WindowDetailView(window: window)
                 }
+                .task {
+                    try? await viewModel.fetchWindowDetails()
+                }
                 .confirmationDialog("Menu", isPresented: $showingMenu, titleVisibility: .hidden) {
                     NavigationLink(destination: IntroductionView()) {
                         Text("Introduction")
