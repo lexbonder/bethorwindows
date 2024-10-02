@@ -10,7 +10,7 @@ import RealityKit
 import SwiftUI
 
 struct ARViewContainer: UIViewRepresentable {
-    let windows: [Window]
+    @ObservedObject var viewModel: ViewModel
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
@@ -20,7 +20,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         config.isAutoFocusEnabled = true
         config.maximumNumberOfTrackedImages = 4
-        config.trackingImages = Set(windows.map {
+        config.trackingImages = Set(viewModel.windows.map {
             guard let uiImage = UIImage(named: $0.image) else {
                 fatalError("Unable to load UIImage")
             }
@@ -49,6 +49,6 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ arView: ARView, context: Context) {}
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(windows: windows)
+        Coordinator(viewModel: viewModel)
     }
 }

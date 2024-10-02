@@ -5,22 +5,23 @@
 //  Created by Alex Reyes-Bonder on 9/12/24.
 //
 
+import SwiftUI
 import ARKit
 import RealityKit
 
 class Coordinator: NSObject, ARSessionDelegate {
-    let windows: [Window]
+    @ObservedObject var viewModel: ViewModel
     weak var arView: ARView?
     
-    init(windows: [Window], arView: ARView? = nil) {
-        self.windows = windows
+    init(viewModel: ViewModel, arView: ARView? = nil) {
+        self.viewModel = viewModel
         self.arView = arView
     }
     
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
-            guard let window = (windows.first { $0.image == anchor.name}) else { return }
+            guard let window = (viewModel.windows.first { $0.image == anchor.name}) else { return }
             let title = window.title
             print("Detected an image anchor: \(title)")
             
@@ -103,7 +104,7 @@ class Coordinator: NSObject, ARSessionDelegate {
         }
         
         guard let windowImageName = modelEntity.anchor?.name else { return }
-        guard let windowToShow = (windows.first{ $0.image == windowImageName}) else { return }
+        guard let windowToShow = (viewModel.windows.first{ $0.image == windowImageName}) else { return }
         
         Router.shared.path.append(windowToShow)
     }

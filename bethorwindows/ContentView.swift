@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView : View {
+    @StateObject var viewModel = ViewModel()
     @StateObject var router = Router.shared
-    let windows = Bundle.main.decode("windows.json")
     
     @State private var showingMenu = false
     @State private var showingInstructions = false
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            ARViewContainer(windows: windows)
+            ARViewContainer(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
                 .navigationDestination(for: Window.self) { window in
                     WindowDetailView(window: window)
@@ -25,7 +25,7 @@ struct ContentView : View {
                     NavigationLink(destination: IntroductionView()) {
                         Text("Introduction")
                     }
-                    NavigationLink(destination: ListView()) {
+                    NavigationLink(destination: ListView(viewModel: viewModel)) {
                         Text("List view")
                     }
                     NavigationLink(destination: AboutTheArtistView()) {
@@ -62,8 +62,4 @@ struct ContentView : View {
                 }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -24,6 +24,10 @@
 		5C98E7FB2C4CA301009BCDD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98E7FA2C4CA301009BCDD7 /* Constants.swift */; };
 		5C98E7FD2C4CA678009BCDD7 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98E7FC2C4CA678009BCDD7 /* ListItemView.swift */; };
 		5C98E7FF2C4CA932009BCDD7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98E7FE2C4CA932009BCDD7 /* ListView.swift */; };
+		5CB12B222CADC93C004CE57E /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB12B212CADC93C004CE57E /* Storage */; };
+		5CB12B242CADC93C004CE57E /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB12B232CADC93C004CE57E /* Supabase */; };
+		5CB12B272CADC96B004CE57E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB12B262CADC96B004CE57E /* ViewModel.swift */; };
+		5CB12B2B2CADCAAC004CE57E /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB12B2A2CADCAAC004CE57E /* Supabase.swift */; };
 		5CD2FC8B2C4B1325003A168B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8A2C4B1325003A168B /* Window.swift */; };
 		5CD2FC8D2C4B1802003A168B /* windows.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8C2C4B1802003A168B /* windows.json */; };
 		5CD2FC8F2C4C9C0E003A168B /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */; };
@@ -50,6 +54,8 @@
 		5C98E7FA2C4CA301009BCDD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5C98E7FC2C4CA678009BCDD7 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		5C98E7FE2C4CA932009BCDD7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		5CB12B262CADC96B004CE57E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5CB12B2A2CADCAAC004CE57E /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 		5CD2FC8A2C4B1325003A168B /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		5CD2FC8C2C4B1802003A168B /* windows.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = windows.json; sourceTree = "<group>"; };
 		5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB12B242CADC93C004CE57E /* Supabase in Frameworks */,
+				5CB12B222CADC93C004CE57E /* Storage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +156,8 @@
 				5CD2FC8C2C4B1802003A168B /* windows.json */,
 				5C9453F12C417B18008E4BAE /* Assets.xcassets */,
 				5C9453F32C417B18008E4BAE /* Preview Content */,
+				5CB12B262CADC96B004CE57E /* ViewModel.swift */,
+				5CB12B2A2CADCAAC004CE57E /* Supabase.swift */,
 			);
 			path = bethorwindows;
 			sourceTree = "<group>";
@@ -204,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 5C9453E12C417B17008E4BAE;
+			packageReferences = (
+				5CB12B202CADC93C004CE57E /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 5C9453EB2C417B17008E4BAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,9 +253,11 @@
 				5C9453FC2C41B220008E4BAE /* WindowDetailView.swift in Sources */,
 				5CF8F0092C93AFA800608F7F /* BackgroundDetailView.swift in Sources */,
 				5C9453F02C417B17008E4BAE /* ContentView.swift in Sources */,
+				5CB12B272CADC96B004CE57E /* ViewModel.swift in Sources */,
 				5C0D6A842C939D3E00B0785D /* Coordinator.swift in Sources */,
 				5C1D2B2C2C49C7D300D18765 /* IntroductionView.swift in Sources */,
 				5C1029BA2C8F6C4E00E653AD /* ARViewContainer.swift in Sources */,
+				5CB12B2B2CADCAAC004CE57E /* Supabase.swift in Sources */,
 				5C98E7FD2C4CA678009BCDD7 /* ListItemView.swift in Sources */,
 				5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */,
 				5C98E7FB2C4CA301009BCDD7 /* Constants.swift in Sources */,
@@ -474,6 +489,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CB12B202CADC93C004CE57E /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CB12B212CADC93C004CE57E /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CB12B202CADC93C004CE57E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		5CB12B232CADC93C004CE57E /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CB12B202CADC93C004CE57E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C9453E22C417B17008E4BAE /* Project object */;
 }

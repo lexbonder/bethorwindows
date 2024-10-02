@@ -8,44 +8,38 @@
 import SwiftUI
 
 struct ListView: View {
-    let windows = Window.allWindows
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         List {
             Section("Ark Windows") {
-                ForEach(Window.arkWindows) { window in
+                ForEach(viewModel.getArkWindows()) { window in
                     NavigationLink (destination: WindowDetailView(window: window)) {
                         ListItemView(window: window)
                     }
                 }
             }
             Section("Above the Ark") {
-                ForEach(Window.aboveArkWindows) { window in
+                ForEach(viewModel.getAboveArkWindows()) { window in
                     NavigationLink (destination: WindowDetailView(window: window)) {
                         ListItemView(window: window)
                     }
                 }
             }
             Section("Passover Windows") {
-                ForEach(Window.passoverWindows) { window in
+                ForEach(viewModel.getPassoverWindows()) { window in
                     NavigationLink (destination: WindowDetailView(window: window)) {
                         ListItemView(window: window)
                     }
                 }
             }
             Section("Around the sanctuary") {
-                ForEach(Window.sanctuaryWindows) { window in
+                ForEach(viewModel.getSanctuaryWindows()) { window in
                     NavigationLink (destination: WindowDetailView(window: window)) {
                         ListItemView(window: window)
                     }
                 }
             }
         }
-    }
-}
-
-#Preview {
-    NavigationStack {
-        ListView()
     }
 }
