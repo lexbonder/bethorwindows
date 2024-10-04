@@ -9,13 +9,17 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        VStack {
-            Image("menorahIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250, height: 250)
-            ProgressView()
-            Text("Loading...")
+        ZStack {
+            Color("LaunchScreenColor")
+                .ignoresSafeArea()
+            VStack {
+                Image("menorahIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+                ProgressView()
+                Text("Loading...")
+            }
         }
     }
 }

@@ -8,5 +8,14 @@
 		<string>gotham-light.otf</string>
 		<string>gotham-light-italic.otf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchScreenColor</string>
+		<key>UIImageName</key>
+		<string>menorahIcon</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>
