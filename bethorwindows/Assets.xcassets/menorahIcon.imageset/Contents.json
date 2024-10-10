@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "menonrahIcon.png",
+      "filename" : "menorahIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "menonrahIcon@2x.png",
+      "filename" : "menorahIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "menonrahIcon@3x.png",
+      "filename" : "menorahIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

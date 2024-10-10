@@ -16,7 +16,7 @@ struct LoadingView: View {
                 Image("menorahIcon")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 250, height: 250)
+                    .frame(width: 250)
                 ProgressView()
                 Text("Loading...")
             }
