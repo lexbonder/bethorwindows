@@ -13,16 +13,11 @@ struct Window: Codable, Identifiable, Hashable {
     let group: String
     let image: String
     let description: String
+    let windowOrder: Int
     let dedication: String?
     
     var id: String {
         return self.image
     }
-    
-    static let allWindows: [Window] = Bundle.main.decode("windows.json")
-    static let arkWindows = allWindows.filter { $0.group == "ark" }
-    static let aboveArkWindows = allWindows.filter { $0.group == "aboveArk" }
-    static let sanctuaryWindows = allWindows.filter { $0.group == "sancutary" }
-    static let passoverWindows = allWindows.filter { $0.group == "passover" }
 }
 
