@@ -5,7 +5,7 @@
 //  Created by Alex Reyes-Bonder on 10/2/24.
 //
 
-import Foundation
+import SwiftUI
 import Supabase
 
 enum Table {
@@ -29,7 +29,7 @@ final class ViewModel: ObservableObject {
             .value
         
         DispatchQueue.main.async {
-            self.windows = windowDetails
+            self.windows = windowDetails.sorted { $0.windowOrder <  $1.windowOrder }
         }
     }
     
@@ -43,10 +43,6 @@ final class ViewModel: ObservableObject {
     
     func getSanctuaryWindows() -> [Window] {
         return windows.filter { $0.group == "sancutary" }
-    }
-    
-    func getPassoverWindows() -> [Window] {
-        return windows.filter { $0.group == "passover" }
     }
     
     func setTrackingImagesLoaded() {

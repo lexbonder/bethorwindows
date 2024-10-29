@@ -15,7 +15,6 @@ struct ContentView : View {
     @State private var showingInstructions = true
     @State private var showsError = false
     
-    
     var body: some View {
         NavigationStack(path: $router.path) {
             ContentPrepareView {

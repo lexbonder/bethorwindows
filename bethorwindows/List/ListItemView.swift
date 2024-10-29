@@ -24,7 +24,3 @@ struct ListItemView: View {
         }
     }
 }
-
-#Preview {
-    ListItemView(window: Window.allWindows[3])
-}

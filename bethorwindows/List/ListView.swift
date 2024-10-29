@@ -10,34 +10,35 @@ import SwiftUI
 struct ListView: View {
     @ObservedObject var viewModel: ViewModel
     
+    fileprivate func getWindowDetailsLink(_ window: Window) -> NavigationLink<ListItemView, WindowDetailCarousel<ForEach<[Window], String, WindowDetailView>>> {
+        return NavigationLink (
+            destination: WindowDetailCarousel(startAt: window.windowOrder) {
+                ForEach(viewModel.windows) { window in
+                    WindowDetailView(window: window)
+                }
+            },
+            label: {
+                ListItemView(window: window)
+            }
+        )
+    }
+    
     var body: some View {
         List {
             Section("Ark Windows") {
                 ForEach(viewModel.getArkWindows()) { window in
-                    NavigationLink (destination: WindowDetailView(window: window)) {
-                        ListItemView(window: window)
-                    }
+                    getWindowDetailsLink(window)
                 }
             }
             Section("Above the Ark") {
                 ForEach(viewModel.getAboveArkWindows()) { window in
-                    NavigationLink (destination: WindowDetailView(window: window)) {
-                        ListItemView(window: window)
-                    }
-                }
-            }
-            Section("Passover Windows") {
-                ForEach(viewModel.getPassoverWindows()) { window in
-                    NavigationLink (destination: WindowDetailView(window: window)) {
-                        ListItemView(window: window)
-                    }
+                    getWindowDetailsLink(window)
+
                 }
             }
             Section("Around the sanctuary") {
                 ForEach(viewModel.getSanctuaryWindows()) { window in
-                    NavigationLink (destination: WindowDetailView(window: window)) {
-                        ListItemView(window: window)
-                    }
+                    getWindowDetailsLink(window)
                 }
             }
         }
