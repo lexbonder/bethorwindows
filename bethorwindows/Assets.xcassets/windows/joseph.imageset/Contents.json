@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "joseph@2x.jpg",
+      "filename" : "joseph2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "joseph@3x.jpg",
+      "filename" : "joseph3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

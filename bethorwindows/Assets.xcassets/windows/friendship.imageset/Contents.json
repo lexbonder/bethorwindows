@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "friendship@2x.jpg",
+      "filename" : "friendship2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "friendship@3x.jpg",
+      "filename" : "friendship3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

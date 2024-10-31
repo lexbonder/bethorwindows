@@ -23,7 +23,6 @@ class Coordinator: NSObject, ARSessionDelegate {
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
             guard let window = (viewModel.windows.first { $0.image == anchor.name}) else { return }
             let title = window.title
-            print("Detected an image anchor: \(title)")
             
                 // Create text model
             let textMesh = MeshResource.generateText(
@@ -53,23 +52,17 @@ class Coordinator: NSObject, ARSessionDelegate {
                 mesh: MeshResource.generatePlane(
                     width: Float(imageAnchor.referenceImage.physicalSize.width),
                     height: Float(imageAnchor.referenceImage.physicalSize.height)),
-                materials: [SimpleMaterial(color: .clear, isMetallic: true)])
+                materials: [SimpleMaterial(color: .clear, isMetallic: true)]
+            )
             
                 // Lay it flat on top of image
             imageOverlay.orientation = simd_quatf(angle: 90 * Float.pi / 180, axis: SIMD3(x: -1, y: 0, z: 0))
             
-                // Reposition title
+                // Center title
             let xHalf = textMesh.bounds.extents.x / 2
-            let halfAnchorHeight = Float(imageAnchor.referenceImage.physicalSize.height) / 2
             let halfTextHeight = textMesh.bounds.extents.y / 2
             textModel.position.x -= xHalf
-
-            if (window.group == "ark") {
-                textBackgroundModel.position.z -= halfTextHeight + 0.0125
-            } else {
-                textModel.position.z -= halfAnchorHeight - textBackgroundMesh.bounds.extents.y
-                textBackgroundModel.position.z -= halfAnchorHeight - (halfTextHeight + 0.0125)
-            }
+            textBackgroundModel.position.z -= halfTextHeight + 0.0125
 
             
                 // Face title forwards and a little down

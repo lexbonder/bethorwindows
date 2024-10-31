@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BackgroundDetailView: View {
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
         VStack(spacing: 20) {
             HStack {
@@ -32,8 +34,4 @@ struct BackgroundDetailView: View {
             Spacer()
         }
     }
-}
-
-#Preview {
-    BackgroundDetailView()
 }

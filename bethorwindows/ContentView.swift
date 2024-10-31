@@ -12,42 +12,32 @@ struct ContentView : View {
     @StateObject var router = Router.shared
     
     @State private var showingMenu = false
-    @State private var showingInstructions = true
     @State private var showsError = false
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            ContentPrepareView {
-                ARViewContainer(viewModel: viewModel)
-                    .edgesIgnoringSafeArea(.all)
+            ContentPrepareView(viewModel: viewModel) {
+                ListView(viewModel: viewModel)
                     .navigationDestination(for: Window.self) { window in
-                        WindowDetailView(window: window)
+                        WindowDetailCarousel(startAt: window.windowOrder) {
+                            ForEach(viewModel.windows) { vmWindow in
+                                WindowDetailView(window: vmWindow)
+                            }
+                        }
                     }
                     .confirmationDialog("Menu", isPresented: $showingMenu, titleVisibility: .hidden) {
                         NavigationLink(destination: IntroductionView()) {
                             Text("Introduction")
                         }
-                        NavigationLink(destination: ListView(viewModel: viewModel)) {
-                            Text("List view")
-                        }
                         NavigationLink(destination: AboutTheArtistView()) {
                             Text("About the artist")
                         }
-                        NavigationLink(destination: BackgroundDetailView()) {
+                        NavigationLink(destination: BackgroundDetailView(viewModel: viewModel)) {
                             Text("Backgrounds")
                         }
-                        Button {
-                            showingInstructions.toggle()
-                        } label: {
-                            Text("Help")
+                        NavigationLink(destination: ARExperience(viewModel: viewModel)) {
+                            Text("Augmented Reality 📷")
                         }
-                    }
-                    .alert(isPresented: $showingInstructions) {
-                        Alert(
-                            title: Text(Constants.welcomeTitle),
-                            message: Text(Constants.welcomeBody),
-                            dismissButton: .default(Text("Lets go!"))
-                        )
                     }
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
