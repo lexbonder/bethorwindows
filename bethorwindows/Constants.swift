@@ -40,10 +40,9 @@ Again, Thank you all."
 """
     
     static let artistObit = "- Benoit Gilsoul (1914-2000)"
-
     
-    static let welcomeTitle = "Hello and Welcome!"
-    static let welcomeBody = "Aim your camera at any of the stained glass windows within the Gitlin Sanctuary to see their titles. Tap the window or title to learn more about them."
+    static let welcomeTitle = "Augmented Reality"
+    static let welcomeBody = "Aim your camera at any of the stained glass windows within the Gitlin Sanctuary to see their titles. When you see the title of the artwork above the window you can tap the window or title to learn more about them."
     
     static let windowBackgroundInfo = "You will see that every window with the exception of the HOLOCAUST window has the same shade of blue in the background. This is important as the artist wished to emphasize their permanence of the generations of Israel. The representative color which is blue, continues throughout all generations and therefore is shown in all of the windows."
 }

@@ -13,14 +13,18 @@ struct ContentPrepareView<Content, Failure, Loading>: View where Content: View, 
     @ViewBuilder let content: () -> Content
     @ViewBuilder let failure: (Error, @escaping () async -> Void) -> Failure
     @ViewBuilder let loading: () -> Loading
+    
+    @ObservedObject var viewModel: ViewModel
     let task: () async throws -> Void
     
     init(
+        viewModel: ViewModel,
         content: @escaping () -> Content,
         failure: @escaping (Error, @escaping () async -> Void) -> Failure = { FailureView(error: $0, retryTask: $1) },
         loading: @escaping () -> Loading = { LoadingView() },
         task: @escaping () async throws -> Void
     ) {
+        self.viewModel = viewModel
         self.content = content
         self.failure = failure
         self.loading = loading

@@ -10,7 +10,7 @@ import SwiftUI
 struct ListView: View {
     @ObservedObject var viewModel: ViewModel
     
-    fileprivate func getWindowDetailsLink(_ window: Window) -> NavigationLink<ListItemView, WindowDetailCarousel<ForEach<[Window], String, WindowDetailView>>> {
+    fileprivate func getWindowDetailsLink(_ window: Window) -> NavigationLink<ListItemView, WindowDetailCarousel<ForEach<[Window], UUID, WindowDetailView>>> {
         return NavigationLink (
             destination: WindowDetailCarousel(startAt: window.windowOrder) {
                 ForEach(viewModel.windows) { window in

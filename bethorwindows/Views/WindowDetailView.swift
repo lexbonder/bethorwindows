@@ -18,8 +18,6 @@ struct WindowDetailView: View {
                 .frame(width: 150, height: 200)
             Text(window.title)
                 .titleGotham()
-//            Text(window.location)
-//                .subtitleGotham()
             WindowDiagramView(activeWindow: window.windowOrder)
             ScrollView {
                 VStack(alignment: .leading) {

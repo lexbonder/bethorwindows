@@ -16,11 +16,25 @@ struct ListItemView: View {
                 .resizable()
                 .frame(width: 50, height: 50)
                 .scaledToFit()
+//            AsyncImage(url: URL(string: window.imageUrl)) { image in
+//                image
+//                    .resizable()
+//                    .scaledToFit()
+//            } placeholder: {
+//                ZStack {
+//                    Image("menorahIcon")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 50, height: 50)
+//                        .grayscale(1)
+//                    ProgressView()
+//                }
+//            }
+//            .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(window.title)
                     .titleGotham()
             }
-                
         }
     }
 }

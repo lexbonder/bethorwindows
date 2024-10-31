@@ -37,8 +37,7 @@
 		5CB5DDAA2CB08D54009B7F74 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5DDA92CB08D54009B7F74 /* LoadingView.swift */; };
 		5CCC4A4E2CC952C0003719F8 /* WindowDetailCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC4A4D2CC952C0003719F8 /* WindowDetailCarousel.swift */; };
 		5CD2FC8B2C4B1325003A168B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8A2C4B1325003A168B /* Window.swift */; };
-		5CD2FC8D2C4B1802003A168B /* windows.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8C2C4B1802003A168B /* windows.json */; };
-		5CD2FC8F2C4C9C0E003A168B /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */; };
+		5CE7B53C2CD2E6EA009E4B30 /* ARExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B53B2CD2E6EA009E4B30 /* ARExperience.swift */; };
 		5CE99EBB2CD034E0003AE1BF /* WindowDiagramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE99EBA2CD034E0003AE1BF /* WindowDiagramItem.swift */; };
 		5CE99EC12CD07A1E003AE1BF /* WindowDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE99EC02CD07A1E003AE1BF /* WindowDiagramView.swift */; };
 		5CE99EC32CD07F41003AE1BF /* WindowDiagramModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE99EC22CD07F41003AE1BF /* WindowDiagramModel.swift */; };
@@ -76,8 +75,7 @@
 		5CB5DDA92CB08D54009B7F74 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5CCC4A4D2CC952C0003719F8 /* WindowDetailCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDetailCarousel.swift; sourceTree = "<group>"; };
 		5CD2FC8A2C4B1325003A168B /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		5CD2FC8C2C4B1802003A168B /* windows.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = windows.json; sourceTree = "<group>"; };
-		5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		5CE7B53B2CD2E6EA009E4B30 /* ARExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARExperience.swift; sourceTree = "<group>"; };
 		5CE99EBA2CD034E0003AE1BF /* WindowDiagramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDiagramItem.swift; sourceTree = "<group>"; };
 		5CE99EC02CD07A1E003AE1BF /* WindowDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDiagramView.swift; sourceTree = "<group>"; };
 		5CE99EC22CD07F41003AE1BF /* WindowDiagramModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDiagramModel.swift; sourceTree = "<group>"; };
@@ -102,6 +100,7 @@
 			children = (
 				5C1029B92C8F6C4E00E653AD /* ARViewContainer.swift */,
 				5C0D6A832C939D3E00B0785D /* Coordinator.swift */,
+				5CE7B53B2CD2E6EA009E4B30 /* ARExperience.swift */,
 			);
 			path = ARExperience;
 			sourceTree = "<group>";
@@ -142,7 +141,6 @@
 		5C202D4E2CA4AAE30032AEF9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5CD2FC8E2C4C9C0E003A168B /* Bundle-Decodable.swift */,
 				5C202D502CA4AB500032AEF9 /* Font-Gotham.swift */,
 				5CB12B2C2CADCE86004CE57E /* Array-NotEmpty.swift */,
 				5C3829CF2CD084B5004AAAE9 /* UIColor-fromHexString.swift */,
@@ -154,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9453EC2C417B17008E4BAE /* bethorwindows */,
+				5C202D4E2CA4AAE30032AEF9 /* Extensions */,
 				5C9453EB2C417B17008E4BAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,7 +168,9 @@
 		5C9453EC2C417B17008E4BAE /* bethorwindows */ = {
 			isa = PBXGroup;
 			children = (
+				5C9453F32C417B18008E4BAE /* Preview Content */,
 				5C202D4D2CA46E9C0032AEF9 /* Info.plist */,
+				5C9453F12C417B18008E4BAE /* Assets.xcassets */,
 				5C202D462CA46C850032AEF9 /* fonts */,
 				5C0D6A822C939D2000B0785D /* ARExperience */,
 				5C1029BB2C8F6CDB00E653AD /* List */,
@@ -179,10 +180,6 @@
 				5CD2FC8A2C4B1325003A168B /* Window.swift */,
 				5C98E7FA2C4CA301009BCDD7 /* Constants.swift */,
 				5C0D6A802C939A7D00B0785D /* Router.swift */,
-				5C202D4E2CA4AAE30032AEF9 /* Extensions */,
-				5CD2FC8C2C4B1802003A168B /* windows.json */,
-				5C9453F12C417B18008E4BAE /* Assets.xcassets */,
-				5C9453F32C417B18008E4BAE /* Preview Content */,
 				5CB12B262CADC96B004CE57E /* ViewModel.swift */,
 				5CB12B2A2CADCAAC004CE57E /* Supabase.swift */,
 				5CB5DD9F2CB03069009B7F74 /* ViewContent.swift */,
@@ -268,7 +265,6 @@
 				5C202D532CA4B2700032AEF9 /* gotham-light.otf in Resources */,
 				5C202D482CA46CC10032AEF9 /* gotham-bold.otf in Resources */,
 				5C9453F22C417B18008E4BAE /* Assets.xcassets in Resources */,
-				5CD2FC8D2C4B1802003A168B /* windows.json in Resources */,
 				5C202D562CA4B3A10032AEF9 /* gotham-light-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,9 +298,9 @@
 				5C9453EE2C417B17008E4BAE /* AppDelegate.swift in Sources */,
 				5C98E7FB2C4CA301009BCDD7 /* Constants.swift in Sources */,
 				5CE99EC12CD07A1E003AE1BF /* WindowDiagramView.swift in Sources */,
+				5CE7B53C2CD2E6EA009E4B30 /* ARExperience.swift in Sources */,
 				5CE99EC32CD07F41003AE1BF /* WindowDiagramModel.swift in Sources */,
 				5CD2FC8B2C4B1325003A168B /* Window.swift in Sources */,
-				5CD2FC8F2C4C9C0E003A168B /* Bundle-Decodable.swift in Sources */,
 				5C98E7FF2C4CA932009BCDD7 /* ListView.swift in Sources */,
 				5CCC4A4E2CC952C0003719F8 /* WindowDetailCarousel.swift in Sources */,
 				5CB5DDAA2CB08D54009B7F74 /* LoadingView.swift in Sources */,

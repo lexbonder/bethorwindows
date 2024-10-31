@@ -10,6 +10,10 @@ import SwiftUI
 struct AboutTheArtistView: View {
     var body: some View {
         VStack {
+            Image("benoit")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 200)
             Text(Constants.artistName)
                 .titleGotham()
                 .padding(.bottom)
@@ -28,8 +32,4 @@ struct AboutTheArtistView: View {
             Spacer()
         }
     }
-}
-
-#Preview {
-    AboutTheArtistView()
 }
