@@ -14,7 +14,7 @@ struct WindowDiagramView: View {
         ZStack {
             ForEach(diagramItemList) { item in
                 WindowDiagramItem(x: item.x, y: item.y, w: item.width, h: item.height)
-                    .foregroundStyle(activeWindow == item.id ? Color(UIColor.fromHexString("FAA632")) : Color(UIColor.fromHexString("#006FB9")))
+                    .foregroundStyle(activeWindow == item.id ? .bethOrOrange : .bethOrBlue)
             }
         }
         .frame(width: 200, height: 100)

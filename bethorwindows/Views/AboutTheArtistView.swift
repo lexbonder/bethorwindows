@@ -19,7 +19,7 @@ struct AboutTheArtistView: View {
                 .padding(.bottom)
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text(Constants.aboutTheArtist)
+                    Text(Constants.artistAbout)
                         .padding(.bottom)
                     Text(Constants.artistQuote)
                         .italic()

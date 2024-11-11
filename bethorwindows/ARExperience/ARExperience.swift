@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ARExperience: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ViewModel
     @State private var showingInstructions = false
     
@@ -16,8 +17,8 @@ struct ARExperience: View {
             .edgesIgnoringSafeArea(.all)
             .alert(isPresented: $showingInstructions) {
                 Alert(
-                    title: Text(Constants.welcomeTitle),
-                    message: Text(Constants.welcomeBody),
+                    title: Text(Constants.augmentedRealityTitle),
+                    message: Text(Constants.augmentedRealityDescription),
                     dismissButton: .default(Text("Lets go!"))
                 )
             }
@@ -27,9 +28,10 @@ struct ARExperience: View {
                         showingInstructions.toggle()
                     } label: {
                         Text("Help")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.bethOrBlue)
+                            .fontWeight(.bold)
                             .padding(10)
-                            .background(.ultraThinMaterial)
+                            .background(.thinMaterial)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
                 }

@@ -7,23 +7,19 @@
 
 import SwiftUI
 
-struct IntroductionView: View {
+struct AboutSanctuaryView: View {
     var body: some View {
         VStack {
-            Text("Introduction")
+            Text("About our Sanctuary")
                 .titleGotham()
                 .padding(.bottom)
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text(Constants.introduction)
+                    Text(.init(Constants.aboutSanctuary))
                 }
             }
             .padding(.horizontal)
             Spacer()
         }
     }
-}
-
-#Preview {
-    IntroductionView()
 }
