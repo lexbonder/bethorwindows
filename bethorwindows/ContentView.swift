@@ -17,50 +17,57 @@ struct ContentView : View {
         NavigationStack(path: $router.path) {
             ContentPrepareView(viewModel: viewModel) {
                 ScrollView {
-                        Image("creation")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                        
+                    Image("creation")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                    
+                    HStack(alignment: .firstTextBaseline) {
                         Text(Constants.introWelcome)
                             .titleGotham()
-                            .padding(.top)
                         
-                        Text(Constants.introDescription)
-                            .padding()
-                            .multilineTextAlignment(.center)
-                        
-                        NavigationLink(destination: AboutSanctuaryView()) {
-                            Text("About our Sanctuary")
-                                .buttonStyle()
-                        }
-                        
-                        NavigationLink(destination:
-                                        ListView(viewModel: viewModel)) {
-                            Text("Windows")
-                                .buttonStyle()
-                        }
-                        
-                        NavigationLink(destination: ARExperience(viewModel: viewModel)) {
-                            Text("Augmented Reality")
-                                .buttonStyle()
-                        }
-                        .navigationDestination(for: Window.self) { window in
-                            WindowDetailCarousel(startAt: window.windowOrder) {
-                                ForEach(viewModel.windows) { vmWindow in
-                                    WindowDetailView(window: vmWindow)
-                                }
+                        Text(Constants.introWelcomeHebrew)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                    }
+                    .padding(.top, 15)
+
+                    
+                    Text(Constants.introDescription)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    
+                    NavigationLink(destination: AboutSanctuaryView()) {
+                        Text("About our Sanctuary")
+                            .buttonStyle()
+                    }
+                    
+                    NavigationLink(destination:
+                                    ListView(viewModel: viewModel)) {
+                        Text("Windows")
+                            .buttonStyle()
+                    }
+                    
+                    NavigationLink(destination: ARExperience(viewModel: viewModel)) {
+                        Text("Augmented Reality")
+                            .buttonStyle()
+                    }
+                    .navigationDestination(for: Window.self) { window in
+                        WindowDetailCarousel(startAt: window.windowOrder) {
+                            ForEach(viewModel.windows) { vmWindow in
+                                WindowDetailView(window: vmWindow)
                             }
                         }
-                        
-                        NavigationLink(destination: AboutTheArtistView()) {
-                            Text("About the artist")
-                                .buttonStyle()
-                        }
-                        
-                        Text(Constants.introAppCredit)
-                            .padding()
-                            .font(.custom("gotham-light", size: 14))
-                            .multilineTextAlignment(.center)
+                    }
+                    
+                    NavigationLink(destination: AboutTheArtistView()) {
+                        Text("About the artist")
+                            .buttonStyle()
+                    }
+                    
+                    Text(Constants.introAppCredit)
+                        .padding()
+                        .font(.custom("gotham-light", size: 14))
+                        .multilineTextAlignment(.center)
                 }
             }
             task: {
