@@ -41,8 +41,7 @@ struct ContentView : View {
                             .buttonStyle()
                     }
                     
-                    NavigationLink(destination:
-                                    ListView(viewModel: viewModel)) {
+                    NavigationLink(destination: ListView(viewModel: viewModel)) {
                         Text("Windows")
                             .buttonStyle()
                     }
@@ -52,10 +51,14 @@ struct ContentView : View {
                             .buttonStyle()
                     }
                     .navigationDestination(for: Window.self) { window in
-                        WindowDetailCarousel(startAt: window.windowOrder) {
-                            ForEach(viewModel.windows) { vmWindow in
-                                WindowDetailView(window: vmWindow)
+                        if #available(iOS 18, *) {
+                            WindowDetailCarousel(startAt: window.windowOrder) {
+                                ForEach(viewModel.windows) { vmWindow in
+                                    WindowDetailView(window: vmWindow)
+                                }
                             }
+                        } else {
+                            WindowDetailView(window: window)
                         }
                     }
                     

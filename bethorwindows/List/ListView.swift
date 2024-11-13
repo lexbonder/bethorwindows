@@ -10,17 +10,24 @@ import SwiftUI
 struct ListView: View {
     @ObservedObject var viewModel: ViewModel
     
-    fileprivate func getWindowDetailsLink(_ window: Window) -> NavigationLink<ListItemView, WindowDetailCarousel<ForEach<[Window], UUID, WindowDetailView>>> {
-        return NavigationLink (
-            destination: WindowDetailCarousel(startAt: window.windowOrder) {
-                ForEach(viewModel.windows) { window in
-                    WindowDetailView(window: window)
+    fileprivate func getWindowDetailsLink(_ window: Window) -> some View {
+        if #available(iOS 18, *) {
+            return NavigationLink (destination: {
+                WindowDetailCarousel(startAt: window.windowOrder) {
+                    ForEach(viewModel.windows) { window in
+                        WindowDetailView(window: window)
+                    }
                 }
-            },
-            label: {
+            }, label: {
                 ListItemView(window: window)
-            }
-        )
+            })
+        } else {
+            return NavigationLink (destination: {
+                WindowDetailView(window: window)
+            }, label: {
+                ListItemView(window: window)
+            })
+        }
     }
     
     var body: some View {
@@ -30,12 +37,13 @@ struct ListView: View {
                     getWindowDetailsLink(window)
                 }
             }
+
             Section("Above the Ark") {
                 ForEach(viewModel.getAboveArkWindows()) { window in
                     getWindowDetailsLink(window)
-
                 }
             }
+
             Section("Around the sanctuary") {
                 ForEach(viewModel.getSanctuaryWindows()) { window in
                     getWindowDetailsLink(window)

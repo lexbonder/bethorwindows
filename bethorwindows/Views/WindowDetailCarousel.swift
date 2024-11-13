@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 18.0, *)
 struct WindowDetailCarousel<Content: View>: View {
     let startAt: Int
     @ViewBuilder var content: Content
