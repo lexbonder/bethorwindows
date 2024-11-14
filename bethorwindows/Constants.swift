@@ -11,7 +11,7 @@ struct Constants {
     static let introWelcome = "Welcome!"
     static let introWelcomeHebrew = "ברוכים הבאים"
     static let introDescription = """
-    This app is your guide to the stained glass windows in our sanctuary at Congregation Beth Or.
+    This app is your guide to the stained glass windows in our Gitlin Sanctuary at Congregation Beth Or.
     
     We hope you use this app to enjoy their beauty and explore the meaning behind them.
     """
