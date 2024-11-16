@@ -37,7 +37,7 @@ struct ContentView : View {
                         .multilineTextAlignment(.center)
                     
                     NavigationLink(destination: AboutSanctuaryView()) {
-                        Text("About our Sanctuary")
+                        Text("About The Gitlin Sanctuary")
                             .buttonStyle()
                     }
                     
