@@ -8,3 +8,5 @@ This app holds information about the stained glass windows at Congregation Beth 
 <img src="https://github.com/user-attachments/assets/ba4fb1db-5c27-4a78-9c72-be1826af5c25" width="200" />
 
 Now available in the [App Store](https://apps.apple.com/us/app/stained-glass-ar/id6680150934) compatible with iOS 17.6+
+-----
+Currently rebuilding this app in React native. It will be available for all platforms and devices soon! Watch its progress on [GitHub](https://www.github.com/lexbonder/stained-glass-ar)
